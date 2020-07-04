@@ -17,13 +17,10 @@ app.use(function validateBearerToken(req, res, next) {
   
     if (!authToken || authToken.split(' ')[1] !== apiToken) {
       return res.status(401).json({ error: 'Unauthorized request. Provide a proper authorization key' })
-    }
+    } 
     // move to the next middleware
     next()
   })
-  
-
-
 function handleMovies(req, res) {
     let response = MOVIES;
   // filter our pokemon by name if name query param is present
